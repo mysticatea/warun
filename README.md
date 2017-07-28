@@ -19,7 +19,7 @@ This will be useful if the command needs a long time.
 Use [npm](https://www.npmjs.com/) to install.
 
 ```console
-$ npm install -D wr
+$ npm install -D warun
 ```
 
 ### Requirements
@@ -31,7 +31,7 @@ $ npm install -D wr
 ### CLI command
 
 ```
-Usage: wr <FILES> [OPTIONS] -- <COMMAND> [COMMAND_ARGS]
+Usage: warun <FILES> [OPTIONS] -- <COMMAND> [COMMAND_ARGS]
 
     Watch files and Run a command.
 
@@ -45,23 +45,23 @@ Options:
     --debounce <number> ... The debounce wait time in milliseconds.
 
 Examples:
-    $ wr lib test -- npm test
-    $ wr src --no-initial -- npm run build
+    $ warun lib test -- npm test
+    $ warun src --no-initial -- npm run build
 ```
 
 ### Node.js API
 
 ```js
-const wr = require("wr")
+const warun = require("warun")
 
 // Start watching
-const watcher = wr.watch(["src"], "npm", ["run", "build"])
+const watcher = warun.watch(["src"], "npm", ["run", "build"])
 
 // Stop watching
 watcher.close()
 ```
 
-#### watcher = new wr.Watcher(patterns, command, args, options)
+#### watcher = new warun.Watcher(patterns, command, args, options)
 
 The watcher class.<br>
 This class inherits [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter).
@@ -108,7 +108,7 @@ It emits this event on every error of the watcher.
 
 ## 📰 Changelog
 
-- [GitHub Releases](https://github.com/mysticatea/wr/releases)
+- [GitHub Releases](https://github.com/mysticatea/warun/releases)
 
 ## 🍻 Contributing
 
@@ -121,4 +121,4 @@ Please use GitHub's Issues/PRs.
 - `npm test` runs tests and measures coverage.
 - `npm run coverage` shows the coverage result of `npm test` command.
 - `npm run lint` runs ESLint.
-- `npm run watch` runs `wr` to run tests on every file change.
+- `npm run watch` runs `warun` to run tests on every file change.
