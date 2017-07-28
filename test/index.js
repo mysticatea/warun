@@ -12,7 +12,7 @@ const execWR = utils.execWR
 const PRINT_LATER = utils.PRINT_LATER
 const WORKSPACE = utils.WORKSPACE
 
-describe("wr", () => {
+describe("warun", () => {
     describe("--help", () => {
         it("should show help text.", async () => {
             const cp = await execWR("--help")

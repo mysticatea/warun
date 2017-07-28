@@ -3,6 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/warun.svg)](https://www.npmjs.com/package/warun)
 [![Downloads/month](https://img.shields.io/npm/dm/warun.svg)](http://www.npmtrends.com/warun)
 [![Build Status](https://travis-ci.org/mysticatea/warun.svg?branch=master)](https://travis-ci.org/mysticatea/warun)
+[![Build Status](https://ci.appveyor.com/api/projects/status/1xgm9jjd7j9dj1x5/branch/master?svg=true)](https://ci.appveyor.com/project/mysticatea/warun/branch/master)
 [![codecov](https://codecov.io/gh/mysticatea/warun/branch/master/graph/badge.svg)](https://codecov.io/gh/mysticatea/warun)
 [![Dependency Status](https://david-dm.org/mysticatea/warun.svg)](https://david-dm.org/mysticatea/warun)
 
