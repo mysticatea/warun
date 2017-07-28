@@ -1,0 +1,9 @@
+{
+    "plugins": [
+        "transform-async-to-generator"
+    ],
+    "presets": [
+        "power-assert"
+    ],
+    "sourceMaps": "inline"
+}

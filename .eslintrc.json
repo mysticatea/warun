@@ -1,0 +1,23 @@
+{
+    "extends": ["mysticatea", "mysticatea/node"],
+    "rules": {
+        "prefer-rest-params": "off"
+    },
+    "overrides": [
+        {
+            "files": ["bin/*.js"],
+            "rules": {
+                "no-console": "off"
+            }
+        },
+        {
+            "files": ["test/**/*.js"],
+            "env": {
+                "mocha": true
+            },
+            "rules": {
+                "node/no-unsupported-features": ["error", {"ignores": ["asyncAwait"]}]
+            }
+        }
+    ]
+}

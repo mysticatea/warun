@@ -1,0 +1,67 @@
+{
+  "name": "wr",
+  "version": "1.0.0",
+  "description": "CLI tool which does Watch and Run.",
+  "engines": {
+    "node": ">=4"
+  },
+  "bin": "bin/index.js",
+  "main": "lib/index.js",
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "dependencies": {
+    "chokidar": "^1.7.0",
+    "cross-spawn": "^5.1.0",
+    "debounce": "^1.0.2",
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-power-assert": "^1.0.0",
+    "babel-register": "^6.24.1",
+    "codecov": "^2.2.0",
+    "eslint": "^4.3.0",
+    "eslint-config-mysticatea": "^11.0.0",
+    "fs-extra": "^4.0.0",
+    "mocha": "^3.4.2",
+    "npm-run-all": "^4.0.2",
+    "nyc": "^11.0.3",
+    "opener": "^1.4.3",
+    "power-assert": "^1.4.4",
+    "wait-on": "^2.0.2"
+  },
+  "scripts": {
+    "_mocha": "_mocha --require babel-register test/*.js --timeout 16000",
+    "clean": "rimraf .nyc_output coverage",
+    "codecov": "nyc report -r lcovonly && codecov",
+    "coverage": "nyc report --reporter lcov && opener coverage/lcov-report/index.html",
+    "lint": "eslint bin lib test",
+    "pretest": "npm run -s lint",
+    "test": "nyc npm run -s _mocha",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags",
+    "prewatch": "npm run -s clean",
+    "watch": "run-p watch:*",
+    "watch:test": "node bin/index.js bin lib test --initial -- nyc --reporter lcov npm run -s _mocha",
+    "watch:coverage": "wait-on coverage/lcov-report/index.html && opener coverage/lcov-report/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mysticatea/wr.git"
+  },
+  "keywords": [
+    "watch",
+    "run",
+    "exec",
+    "cli",
+    "chokidar"
+  ],
+  "author": "Toru Nagashima (https://github.com/mysticatea)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mysticatea/wr/issues"
+  },
+  "homepage": "https://github.com/mysticatea/wr#readme"
+}
