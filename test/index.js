@@ -104,7 +104,7 @@ describe("wr", () => {
             process.chdir(originalDir)
 
             if (cp != null) {
-                await cp.kill()
+                await cp.kill("SIGINT")
                 cp = null
             }
 
