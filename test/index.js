@@ -108,7 +108,14 @@ describe("warun", () => {
                 cp = null
             }
 
-            fs.removeSync(WORKSPACE)
+            try {
+                fs.removeSync(WORKSPACE)
+            }
+            catch (_err) {
+                // ignore.
+                // EBUSY happens occasionally.
+                await utils.delay(1000)
+            }
         })
 
         it("should run the command on ready.", async () => {
